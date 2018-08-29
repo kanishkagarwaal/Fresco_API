@@ -4,7 +4,6 @@ from cassandra.cqlengine.management import sync_table
 from flask import Flask,jsonify
 from models.CustomerSeg import CustomerSeg
 from views.api import app
-#from sync_db import sync_db
 
 KEYSPACE = "fresco_seg"
 
@@ -27,6 +26,6 @@ session = cluster.connect(keyspace=KEYSPACE)
 #api = Api(app)
 
 if __name__ == '__main__':
-    connection.setup(['127.0.0.1'], "customer_segment", protocol_version=3)
-    sync_table(CustomerSeg)
+    ##connection.setup(['127.0.0.1'], "customer_segment", protocol_version=3)
+    ##sync_table(CustomerSeg)
     app.run(host="0.0.0.0", port=8081,debug=True)
