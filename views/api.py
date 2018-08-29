@@ -35,7 +35,7 @@ class UserAll(Resource):
 		#user=[user.get_data() for user in users]
 		df = pd.read_csv('raw_data/DatasetGenerated.csv')
 		user = df.to_dict('records')
-        return (user)
+		return (user)
 apis.add_resource(UserAll, '/users')
 
 
@@ -47,7 +47,7 @@ class UserSearch(Resource):
 		df = df[df['party_id']==id]
 		user = df.to_dict('records')
 		return (user)
-apis.add_resource(UserSearch, '/users/<id>')
+apis.add_resource(UserSearch, '/users/<int:id>')
 
 
 class UserAllSegment(Resource):
@@ -66,7 +66,7 @@ class UserSegment(Resource):
 		#user=[user.get_data() for user in users]
 		df = pd.read_csv('raw_data/DatasetGenerated.csv')
 		df = df[df['fresco13_seg']==seg_cd]
-		users = df.to_dict('records')
+		user = df.to_dict('records')
 		return (user)
-apis.add_resource(UserSegment, '/user_seg/<seg_cd>')
+apis.add_resource(UserSegment, '/user_seg/<int:seg_cd>')
 

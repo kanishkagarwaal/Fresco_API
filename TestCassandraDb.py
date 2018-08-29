@@ -8,8 +8,8 @@ from views.api import app
 KEYSPACE = "fresco_seg"
 
 
-cluster = Cluster()
-session = cluster.connect(keyspace=KEYSPACE)
+#cluster = Cluster()
+#session = cluster.connect(keyspace=KEYSPACE)
 
 
 #session = cluster.connect()
